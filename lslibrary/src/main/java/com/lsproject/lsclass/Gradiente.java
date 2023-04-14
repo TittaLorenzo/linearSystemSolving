@@ -1,6 +1,5 @@
-package com.lsclass;
+package com.lsproject.lsclass;
 
-public class Gradiente 
-{
-    
+public class Gradiente {
+
 }

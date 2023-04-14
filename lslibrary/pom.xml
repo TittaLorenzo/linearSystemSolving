@@ -51,11 +51,6 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
-          <configuration>
-          <additionalClasspathElements>
-            <additionalClasspathElement>/src/main/lsclass</additionalClasspathElement>            
-          </additionalClasspathElements>
-        </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>

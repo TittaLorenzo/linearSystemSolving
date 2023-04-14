@@ -1,6 +1,5 @@
-package com.lsclass;
+package com.lsproject.lsclass;
 
-public class LSSolver 
-{
-    
+public class LSSolver {
+
 }

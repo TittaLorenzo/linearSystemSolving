@@ -1,6 +1,5 @@
-package com.lsclass;
+package com.lsproject.lsclass;
 
-public class Graubseidel 
-{
-    
+public class Graubseidel {
+
 }
