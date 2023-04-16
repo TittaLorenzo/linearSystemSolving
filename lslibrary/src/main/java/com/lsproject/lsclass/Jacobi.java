@@ -1,5 +1,6 @@
 package com.lsproject.lsclass;
 
+import java.io.IOException;
 import java.math.*;
 import org.la4j.*;
 import org.la4j.matrix.dense.Basic1DMatrix;
@@ -8,11 +9,11 @@ import org.la4j.vector.dense.BasicVector;
 
 public class Jacobi extends LSSolver {
 
-    public Jacobi(int maxinumIteration, double tollerance) {
+    public Jacobi(int maxinumIteration, double tollerance) throws IOException {
         super(maxinumIteration, tollerance);
     }
 
-    public Jacobi() {
+    public Jacobi() throws IOException {
         this(20000, 1e-6);
     }
 
@@ -31,7 +32,7 @@ public class Jacobi extends LSSolver {
                 double sum = b.get(i);
                 for (int j = 0; j < a.columns(); j++) {
                     if (j != i) {
-                        sum -= a.get(i, j) + xVecchio.get(j);
+                        sum -= a.get(i, j) * xVecchio.get(j);
                     }
                 }
                 solutionX.set(i, sum / diag.get(i));
@@ -46,7 +47,7 @@ public class Jacobi extends LSSolver {
                 break;
             }
             k++;
-        } while (delta < tol);
+        } while (delta > tol);
         System.out.println("soluzione con metodo di jacobi in " + k + " iterazioni: ");
         System.out.println(solutionX.toString());
     }

@@ -1,10 +1,18 @@
 package com.lsproject.lsclass;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.math.*;
+import java.util.stream.Stream;
+
 import org.la4j.*;
 import org.la4j.matrix.dense.Basic1DMatrix;
 import org.la4j.matrix.dense.Basic2DMatrix;
 import org.la4j.vector.dense.BasicVector;
+import org.la4j.Matrix;
+import org.la4j.matrix.sparse.CRSMatrix;
+import java.io.IOException;
 
 public abstract class LSSolver {
 
@@ -22,10 +30,15 @@ public abstract class LSSolver {
     Vector sol = new BasicVector(new double[] { 1, 1, 1 });
     Vector diag;
 
-    public LSSolver(int maxinumIteration, double tollerance) {
+    public LSSolver(int maxinumIteration, double tollerance) throws IOException {
         maxIter = maxinumIteration; // check nel file exe che sia < di 20'000
         tol = tollerance;
-
+        a = ImportMtxFile("lslibrary/src/main/java/com/Matrici/spa1.mtx");
+        b = new BasicVector(a.columns());
+        sol = new BasicVector(a.columns());
+        for (int i = 0; i < a.columns(); i++) {
+            sol.set(i, 0);
+        }
         // calcolo b
         b = a.multiply(sol);
 
@@ -48,4 +61,21 @@ public abstract class LSSolver {
         }
         return Math.sqrt(s);
     }
+
+    public Matrix ImportMtxFile(String fileName) throws IOException {
+        File file = new File(fileName);
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String intestazione = br.readLine();
+        String[] temp = intestazione.split(" ");
+        Matrix m1 = new Basic2DMatrix(Integer.parseInt(temp[0]), Integer.parseInt(temp[2]));
+        for (int i = 0; i < Integer.parseInt(temp[4]); i++) {
+            String valori = br.readLine();
+            String[] arr = valori.split(" ");
+            m1.set(Integer.parseInt(arr[0]) - 1, Integer.parseInt(arr[2]) - 1, Double.parseDouble(arr[4]));
+        }
+        br.close();
+        System.out.println(m1.diagonalProduct());
+        return m1;
+    }
+
 }
