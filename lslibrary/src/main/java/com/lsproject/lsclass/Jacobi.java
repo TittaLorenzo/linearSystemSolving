@@ -49,6 +49,6 @@ public class Jacobi extends LSSolver {
             k++;
         } while (delta > tol);
         System.out.println("soluzione con metodo di jacobi in " + k + " iterazioni: ");
-        System.out.println(solutionX.toString());
+        // System.out.println(solutionX.toString());
     }
 }

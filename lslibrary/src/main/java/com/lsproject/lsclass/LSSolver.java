@@ -37,11 +37,11 @@ public abstract class LSSolver {
         b = new BasicVector(a.columns());
         sol = new BasicVector(a.columns());
         for (int i = 0; i < a.columns(); i++) {
-            sol.set(i, 0);
+            sol.set(i, 1);
         }
         // calcolo b
         b = a.multiply(sol);
-
+        // System.out.println(b);
         // calcolo diagonale
         diag = new BasicVector(new double[b.length()]);
         for (int i = 0; i < a.columns(); i++) {
@@ -50,8 +50,7 @@ public abstract class LSSolver {
     }
 
     public void executeMethods() {
-        System.out.println(b.toString());
-        System.out.println(diag.toString());
+
     }
 
     public double norma2(Vector v) {
@@ -74,7 +73,6 @@ public abstract class LSSolver {
             m1.set(Integer.parseInt(arr[0]) - 1, Integer.parseInt(arr[2]) - 1, Double.parseDouble(arr[4]));
         }
         br.close();
-        System.out.println(m1.diagonalProduct());
         return m1;
     }
 
