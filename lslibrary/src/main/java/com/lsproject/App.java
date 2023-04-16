@@ -1,7 +1,10 @@
 package com.lsproject;
 
+import com.lsproject.lsclass.LSSolver;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        LSSolver lss = new LSSolver();
+        lss.executeMethods();
     }
 }
