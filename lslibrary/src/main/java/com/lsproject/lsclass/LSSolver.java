@@ -3,15 +3,10 @@ package com.lsproject.lsclass;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.math.*;
-import java.util.stream.Stream;
-
 import org.la4j.*;
-import org.la4j.matrix.dense.Basic1DMatrix;
 import org.la4j.matrix.dense.Basic2DMatrix;
 import org.la4j.vector.dense.BasicVector;
 import org.la4j.Matrix;
-import org.la4j.matrix.sparse.CRSMatrix;
 import java.io.IOException;
 
 public abstract class LSSolver {
@@ -23,7 +18,6 @@ public abstract class LSSolver {
     Matrix matrixA;
     Vector vectorB;
     Vector solutionX;
-
     // prova
     Matrix a = new Basic2DMatrix(new double[][] { { 3, -1, 1 }, { 2, 6, -1 }, { 1, 1, 7 } });
     Vector b = new BasicVector(new double[] { 0, 0, 0 });
