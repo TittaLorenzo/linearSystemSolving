@@ -24,10 +24,14 @@ public abstract class LSSolver {
     Vector sol = new BasicVector(new double[] { 1, 1, 1 });
     Vector diag;
 
-    public LSSolver(int maxinumIteration, double tollerance) throws IOException {
+    public LSSolver(int maxinumIteration, double tollerance, String str) throws IOException {
         maxIter = maxinumIteration; // check nel file exe che sia < di 20'000
         tol = tollerance;
-        a = ImportMtxFile("lslibrary/src/main/java/com/Matrici/spa1.mtx");
+        a = ImportMtxFile(str);   
+        setMatrix();    
+    }
+
+    public void setMatrix(){
         b = new BasicVector(a.columns());
         sol = new BasicVector(a.columns());
         for (int i = 0; i < a.columns(); i++) {
