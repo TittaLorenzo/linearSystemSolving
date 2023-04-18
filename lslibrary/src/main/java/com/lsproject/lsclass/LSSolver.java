@@ -27,11 +27,11 @@ public abstract class LSSolver {
     public LSSolver(int maxinumIteration, double tollerance, String str) throws IOException {
         maxIter = maxinumIteration; // check nel file exe che sia < di 20'000
         tol = tollerance;
-        a = ImportMtxFile(str);   
-        setMatrix();    
+        a = ImportMtxFile(str);
+        setMatrix();
     }
 
-    public void setMatrix(){
+    public void setMatrix() {
         b = new BasicVector(a.columns());
         sol = new BasicVector(a.columns());
         for (int i = 0; i < a.columns(); i++) {
