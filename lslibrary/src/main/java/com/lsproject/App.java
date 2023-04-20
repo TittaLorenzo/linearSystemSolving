@@ -5,6 +5,7 @@ import com.lsproject.lsclass.LSSolver;
 import java.io.IOException;
 
 import com.lsproject.lsclass.Gradiente;
+import com.lsproject.lsclass.Gradienteconiugato;
 import com.lsproject.lsclass.Graubseidel;
 import com.lsproject.lsclass.Jacobi;
 
@@ -94,7 +95,7 @@ public class App {
          * lss.executeMethods();
          */
 
-        LSSolver lss = new Gradiente("lslibrary/src/main/java/com/Matrici/spa1.mtx");
+        LSSolver lss = new Gradienteconiugato("lslibrary/src/main/java/com/Matrici/spa1.mtx");
         System.out.println(
                 "____________________________________________________________________________________________________");
         System.out.println();

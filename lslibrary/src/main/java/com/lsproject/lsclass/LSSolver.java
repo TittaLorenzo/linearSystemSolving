@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import org.la4j.*;
-import org.la4j.matrix.dense.Basic2DMatrix;
+import org.la4j.matrix.sparse.CCSMatrix;
 import org.la4j.vector.dense.BasicVector;
 import org.la4j.Matrix;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public abstract class LSSolver {
     Vector vectorB;
     Vector solutionX;
     // prova
-    Matrix a = new Basic2DMatrix(new double[][] { { 3, -1, 1 }, { 2, 6, -1 }, { 1, 1, 7 } });
+    Matrix a = new CCSMatrix();
     Vector b = new BasicVector(new double[] { 0, 0, 0 });
     Vector sol = new BasicVector(new double[] { 1, 1, 1 });
     Vector diag;
@@ -64,7 +64,7 @@ public abstract class LSSolver {
         BufferedReader br = new BufferedReader(new FileReader(file));
         String intestazione = br.readLine();
         String[] temp = intestazione.split(" ");
-        Matrix m1 = new Basic2DMatrix(Integer.parseInt(temp[0]), Integer.parseInt(temp[2]));
+        Matrix m1 = new CCSMatrix(Integer.parseInt(temp[0]), Integer.parseInt(temp[2]));
         for (int i = 0; i < Integer.parseInt(temp[4]); i++) {
             String valori = br.readLine();
             String[] arr = valori.split(" ");
@@ -74,4 +74,29 @@ public abstract class LSSolver {
         return m1;
     }
 
+    public Matrix inversa(Matrix m) {
+        Matrix inversa = new CCSMatrix(m.rows(), m.columns());
+        if (m.determinant() != 0) {
+            for (int i = 0; i < m.rows(); i++) {
+                for (int j = 0; j < m.columns(); j++) {
+
+                }
+            }
+        } else {
+            return null;
+        }
+        return inversa;
+    }
+
+    public static double prodottoScalare(Vector v1, Vector v2) {
+        double sum = 0;
+        if (v1.length() == v2.length()) {
+            for (int i = 0; i < v1.length(); i++) {
+                sum += v1.get(i) * v2.get(i);
+            }
+        } else {
+            return 0;
+        }
+        return sum;
+    }
 }

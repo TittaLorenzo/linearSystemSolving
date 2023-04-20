@@ -1,10 +1,7 @@
 package com.lsproject.lsclass;
 
 import java.io.IOException;
-import java.math.*;
 import org.la4j.*;
-import org.la4j.matrix.dense.Basic1DMatrix;
-import org.la4j.matrix.dense.Basic2DMatrix;
 import org.la4j.vector.dense.BasicVector;
 
 public class Graubseidel extends LSSolver {

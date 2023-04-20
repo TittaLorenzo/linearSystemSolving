@@ -1,10 +1,7 @@
 package com.lsproject.lsclass;
 
 import java.io.IOException;
-import java.math.*;
 import org.la4j.*;
-import org.la4j.matrix.dense.Basic1DMatrix;
-import org.la4j.matrix.dense.Basic2DMatrix;
 import org.la4j.vector.dense.BasicVector;
 
 public class Gradiente extends LSSolver {
@@ -43,10 +40,10 @@ public class Gradiente extends LSSolver {
                 // calcolo soluzione
                 Vector residuo = b.subtract(a.multiply(xVecchio));
                 Vector y = a.multiply(residuo);
-                Vector va = residuo.multiply(residuo.toColumnMatrix());
-                Vector vb = residuo.toColumnMatrix().multiply(y);
-                Vector alpha = va.multiply(vb.toRowMatrix().power(-1));
-                solutionX = xVecchio.add(alpha.multiply(residuo.toRowMatrix()));
+                Double va = prodottoScalare(residuo, residuo);
+                Double vb = prodottoScalare(residuo, y);
+                Double alpha = va / vb;
+                solutionX = xVecchio.add(residuo.multiply(alpha));
                 // verifica convergenza
                 delta = norma2(solutionX.subtract(xVecchio)) / norma2(solutionX);
                 xVecchio = solutionX;
