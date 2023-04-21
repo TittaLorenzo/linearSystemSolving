@@ -56,7 +56,7 @@ public class Gradienteconiugato extends LSSolver {
                 k++;
             } while (delta > tol);
             System.out.println(
-                    "soluzione con metodo di gauss seidel co tolleranza a: " + tol + " in " + k + " iterazioni: ");
+                    "soluzione con metodo del gradiente coniugato con tolleranza a: " + tol + " in " + k + " iterazioni: ");
             System.out.println("Errore assoluto:");
             System.out.println(String.format("%.20f", (norma2(sol.subtract(solutionX)))));
             System.out.println("Errore relativo:");
