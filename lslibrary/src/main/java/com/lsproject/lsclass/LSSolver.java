@@ -13,6 +13,8 @@ public abstract class LSSolver {
 
     protected int maxIter;
     protected double tol;
+    long startTime;
+    long endTime;
 
     // matrix with la4j library
     Matrix matrixA;
@@ -59,6 +61,7 @@ public abstract class LSSolver {
             } else {
                 tol = 1e-10;
             }
+            startTime = System.currentTimeMillis();
             Vector xVecchio = new BasicVector(new double[sol.length()]);
             for (int i = 0; i < xVecchio.length(); i++) {
                 xVecchio.set(i, 0);
@@ -77,7 +80,8 @@ public abstract class LSSolver {
                 }
                 k++;
             } while (delta > tol);
-            System.out.println("soluzione con metodo di jacobi co tolleranza a: " + tol + " in " + k + " iterazioni: ");
+            endTime = System.currentTimeMillis();
+            System.out.println("esecuzione metodo con tolleranza a: " + tol + " in " + k + " iterazioni con un tempo di: " + (endTime - startTime) + " millisecondi (" + ((double)endTime - (double)startTime)/1000 +" sec)");
             System.out.println("Errore assoluto:");
             System.out.println(String.format("%.20f", (norma2(sol.subtract(solutionX)))));
             System.out.println("Errore relativo:");
