@@ -89,7 +89,7 @@ public class App {
 
                 // GRADIENTE
 
-                LSSolver lss = new Gradiente("lslibrary/src/main/java/com/Matrici/vem1.mtx");
+                LSSolver lss = new Gradiente("lslibrary/src/main/java/com/Matrici/spa1.mtx");
                 System.out.println(
                                 "____________________________________________________________________________________________________");
                 System.out.println();
