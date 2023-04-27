@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public abstract class LSSolver {
 
-    protected int maxIter;
+    protected int maxIter = 20000;
     protected double tol;
     long startTime;
     long endTime;
@@ -26,9 +26,17 @@ public abstract class LSSolver {
     Vector sol = new BasicVector(new double[] { 1, 1, 1 });
     Vector diag;
 
-    public LSSolver(int maxinumIteration, double tollerance, String str) throws IOException {
-        maxIter = maxinumIteration; // check nel file exe che sia < di 20'000
-        tol = tollerance;
+    public LSSolver(Matrix aIn, Vector bIn, Vector xIn) {
+        a = aIn;
+        b = bIn;
+        sol = xIn;
+        diag = new BasicVector(new double[b.length()]);
+        for (int i = 0; i < a.columns(); i++) {
+            diag.set(i, a.get(i, i));
+        }
+    }
+
+    public LSSolver(String str) throws IOException {
         a = ImportMtxFile(str);
         setMatrix();
     }
@@ -49,9 +57,14 @@ public abstract class LSSolver {
         }
     }
 
+    public void reset() {
+
+    }
+
     public void executeMethods() {
         for (int t = 1; t < 5; t++) {
-            setMatrix();
+            // setMatrix();
+            reset();
             if (t == 1) {
                 tol = 1e-4;
             } else if (t == 2) {
@@ -79,14 +92,17 @@ public abstract class LSSolver {
                     break;
                 }
                 k++;
-            } while (delta > tol);
+            } while (delta > tol && norma2(sol.subtract(solutionX)) > tol);
             endTime = System.currentTimeMillis();
-            System.out.println("esecuzione metodo con tolleranza a: " + tol + " in " + k + " iterazioni con un tempo di: " + (endTime - startTime) + " millisecondi (" + ((double)endTime - (double)startTime)/1000 +" sec)");
+            System.out.println("esecuzione metodo con tolleranza a: " + tol + " in " + k
+                    + " iterazioni con un tempo di: " + (endTime - startTime) + " millisecondi ("
+                    + ((double) endTime - (double) startTime) / 1000 + " sec)");
             System.out.println("Errore assoluto:");
             System.out.println(String.format("%.20f", (norma2(sol.subtract(solutionX)))));
             System.out.println("Errore relativo:");
             System.out.println(String.format("%.20f", (norma2(sol.subtract(solutionX)) / norma2(sol))));
             System.out.println();
+            // System.out.println("soluzione: " + solutionX);
         }
 
     }

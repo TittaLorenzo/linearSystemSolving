@@ -6,12 +6,16 @@ import org.la4j.vector.dense.BasicVector;
 
 public class Jacobi extends LSSolver {
 
-    public Jacobi(int maxinumIteration, double tollerance, String str) throws IOException {
-        super(maxinumIteration, tollerance, str);
+    public Jacobi(String str) throws IOException {
+        super(str);
     }
 
-    public Jacobi(String str) throws IOException {
-        this(20000, 1e-4, str);
+    public Jacobi(Matrix aIn, Vector bIn, Vector xIn) {
+        super(aIn, bIn, xIn);
+    }
+
+    public void reset() {
+
     }
 
     public Vector risoluzione(Vector xVecchio) {

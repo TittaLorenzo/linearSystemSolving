@@ -6,12 +6,16 @@ import org.la4j.vector.dense.BasicVector;
 
 public class Graubseidel extends LSSolver {
 
-    public Graubseidel(int maxinumIteration, double tollerance, String str) throws IOException {
-        super(maxinumIteration, tollerance, str);
+    public Graubseidel(String str) throws IOException {
+        super(str);
     }
 
-    public Graubseidel(String str) throws IOException {
-        this(20000, 1e-4, str);
+    public Graubseidel(Matrix aIn, Vector bIn, Vector xIn) {
+        super(aIn, bIn, xIn);
+    }
+
+    public void reset() {
+
     }
 
     public Vector risoluzione(Vector xVecchio) {

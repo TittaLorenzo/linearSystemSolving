@@ -8,14 +8,21 @@ public class Gradienteconiugato extends LSSolver {
     Vector residuo;
     Vector p;
 
-    public Gradienteconiugato(int maxinumIteration, double tollerance, String str) throws IOException {
-        super(maxinumIteration, tollerance, str);
+    public Gradienteconiugato(String str) throws IOException {
+        super(str);
         residuo = b.subtract(a.multiply(new BasicVector(new double[sol.length()])));
         p = residuo;
     }
 
-    public Gradienteconiugato(String str) throws IOException {
-        this(20000, 1e-4, str);
+    public Gradienteconiugato(Matrix aIn, Vector bIn, Vector xIn) {
+        super(aIn, bIn, xIn);
+        residuo = b.subtract(a.multiply(new BasicVector(new double[b.length()])));
+        p = residuo;
+    }
+
+    public void reset() {
+        residuo = b.subtract(a.multiply(new BasicVector(new double[sol.length()])));
+        p = residuo;
     }
 
     public Vector risoluzione(Vector xVecchio) {
