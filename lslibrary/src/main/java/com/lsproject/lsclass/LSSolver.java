@@ -12,7 +12,6 @@ import java.io.IOException;
 public abstract class LSSolver {
 
     protected int maxIter = 20000;
-    protected double tol;
     long startTime;
     long endTime;
 
@@ -49,7 +48,6 @@ public abstract class LSSolver {
         }
         // calcolo b
         b = a.multiply(sol);
-        // System.out.println(b);
         // calcolo diagonale
         diag = new BasicVector(new double[b.length()]);
         for (int i = 0; i < a.columns(); i++) {
@@ -57,54 +55,34 @@ public abstract class LSSolver {
         }
     }
 
-    public void reset() {
-
-    }
-
-    public void executeMethods() {
-        for (int t = 1; t < 5; t++) {
-            // setMatrix();
-            reset();
-            if (t == 1) {
-                tol = 1e-4;
-            } else if (t == 2) {
-                tol = 1e-6;
-            } else if (t == 3) {
-                tol = 1e-8;
-            } else {
-                tol = 1e-10;
-            }
-            startTime = System.currentTimeMillis();
-            Vector xVecchio = new BasicVector(new double[sol.length()]);
-            for (int i = 0; i < xVecchio.length(); i++) {
-                xVecchio.set(i, 0);
-            }
-            double delta = 0;
-            int k = 0;
-            do {
-                // calcolo soluzione
-                solutionX = risoluzione(xVecchio);
-                // verifica convergenza
-                delta = norma2(solutionX.subtract(xVecchio)) / norma2(solutionX);
-                xVecchio = solutionX;
-                if (k > maxIter) {
-                    System.out.println("Errore: Raggiunto il numero massimo di iterazioni");
-                    break;
-                }
-                k++;
-            } while (delta > tol && norma2(sol.subtract(solutionX)) > tol);
-            endTime = System.currentTimeMillis();
-            System.out.println("esecuzione metodo con tolleranza a: " + tol + " in " + k
-                    + " iterazioni con un tempo di: " + (endTime - startTime) + " millisecondi ("
-                    + ((double) endTime - (double) startTime) / 1000 + " sec)");
-            System.out.println("Errore assoluto:");
-            System.out.println(String.format("%.20f", (norma2(sol.subtract(solutionX)))));
-            System.out.println("Errore relativo:");
-            System.out.println(String.format("%.20f", (norma2(sol.subtract(solutionX)) / norma2(sol))));
-            System.out.println();
-            // System.out.println("soluzione: " + solutionX);
+    public void executeMethods(double tol) {
+        startTime = System.currentTimeMillis();
+        Vector xVecchio = new BasicVector(new double[sol.length()]);
+        for (int i = 0; i < xVecchio.length(); i++) {
+            xVecchio.set(i, 0);
         }
-
+        double delta = 0;
+        int k = 0;
+        do {
+            // calcolo soluzione
+            solutionX = risoluzione(xVecchio);
+            // verifica convergenza
+            delta = norma2(a.multiply(solutionX).subtract(b)) / norma2(b);
+            xVecchio = solutionX;
+            if (k > maxIter) {
+                System.out.println("Errore: Raggiunto il numero massimo di iterazioni");
+                break;
+            }
+            k++;
+        } while (delta > tol && norma2(sol.subtract(solutionX)) > tol);
+        endTime = System.currentTimeMillis();
+        System.out.println("esecuzione metodo con tolleranza a: " + tol + " in " + k
+                + " iterazioni con un tempo di: " + (endTime - startTime) + " millisecondi ("
+                + ((double) endTime - (double) startTime) / 1000 + " sec)");
+        System.out.println("Errore relativo:");
+        System.out.println(String.format("%.20f", (norma2(sol.subtract(solutionX)) /
+                norma2(sol))));
+        // System.out.println("soluzione: " + solutionX);
     }
 
     public abstract Vector risoluzione(Vector xVecchio);
