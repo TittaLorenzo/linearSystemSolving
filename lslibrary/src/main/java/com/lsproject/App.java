@@ -36,289 +36,288 @@ public class App {
 
                 // JACOBI
 
-                // LSSolver lss = new Jacobi("lslibrary/src/main/java/com/Matrici/spa1.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("JACOBI eseguito su spa1.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                LSSolver lss = new Jacobi("lslibrary/src/main/java/com/Matrici/spa1.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("JACOBI eseguito su spa1.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Jacobi("lslibrary/src/main/java/com/Matrici/spa2.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("JACOBI eseguito su spa2.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                lss = new Jacobi("lslibrary/src/main/java/com/Matrici/spa2.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("JACOBI eseguito su spa2.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Jacobi("lslibrary/src/main/java/com/Matrici/vem1.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("JACOBI eseguito su vem1.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // // setMatrix();
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                lss = new Jacobi("lslibrary/src/main/java/com/Matrici/vem1.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("JACOBI eseguito su vem1.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        // setMatrix();
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Jacobi("lslibrary/src/main/java/com/Matrici/vem2.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("JACOBI eseguito su vem2.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // // setMatrix();
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
+                lss = new Jacobi("lslibrary/src/main/java/com/Matrici/vem2.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("JACOBI eseguito su vem2.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        // setMatrix();
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
+                System.out.println(
+                                "____________________________________________________________________________________________________");
 
                 // GRAUB SEIDEL
 
-                // LSSolver lss = new
-                // Graubseidel("lslibrary/src/main/java/com/Matrici/spa1.mtx");
-                // System.out.println(
+                lss = new Graubseidel("lslibrary/src/main/java/com/Matrici/spa1.mtx");
+                System.out.println(
 
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GRAUB SEIDEL eseguito su spa1.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // // setMatrix();
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GRAUB SEIDEL eseguito su spa1.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        // setMatrix();
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Graubseidel("lslibrary/src/main/java/com/Matrici/spa2.mtx");
-                // System.out.println(
+                lss = new Graubseidel("lslibrary/src/main/java/com/Matrici/spa2.mtx");
+                System.out.println(
 
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GAUSS SEIDEL eseguito su spa2.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // // setMatrix();
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GAUSS SEIDEL eseguito su spa2.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        // setMatrix();
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Graubseidel("lslibrary/src/main/java/com/Matrici/vem1.mtx");
-                // System.out.println(
+                lss = new Graubseidel("lslibrary/src/main/java/com/Matrici/vem1.mtx");
+                System.out.println(
 
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GAUSS SEIDEL eseguito su vem1.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // // setMatrix();
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GAUSS SEIDEL eseguito su vem1.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        // setMatrix();
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Graubseidel("lslibrary/src/main/java/com/Matrici/vem2.mtx");
-                // System.out.println(
+                lss = new Graubseidel("lslibrary/src/main/java/com/Matrici/vem2.mtx");
+                System.out.println(
 
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GAUSS SEIDEL eseguito su vem2.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GAUSS SEIDEL eseguito su vem2.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
                 // GRADIENTE
 
-                // LSSolver lss = new Gradiente("lslibrary/src/main/java/com/Matrici/spa1.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GRADIENTE eseguito su spa1.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                lss = new Gradiente("lslibrary/src/main/java/com/Matrici/spa1.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GRADIENTE eseguito su spa1.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Gradiente("lslibrary/src/main/java/com/Matrici/spa2.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GRADIENTE eseguito su spa2.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                lss = new Gradiente("lslibrary/src/main/java/com/Matrici/spa2.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GRADIENTE eseguito su spa2.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Gradiente("lslibrary/src/main/java/com/Matrici/vem1.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GRADIENTE eseguito su vem1.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                lss = new Gradiente("lslibrary/src/main/java/com/Matrici/vem1.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GRADIENTE eseguito su vem1.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
-                // lss = new Gradiente("lslibrary/src/main/java/com/Matrici/vem2.mtx");
-                // System.out.println(
-                // "____________________________________________________________________________________________________");
-                // System.out.println();
-                // System.out.println("GRADIENTE eseguito su vem2.mtx");
-                // System.out.println();
-                // for (int t = 1; t < 5; t++) {
-                // if (t == 1) {
-                // tol = 1e-4;
-                // lss.executeMethods(tol);
-                // } else if (t == 2) {
-                // tol = 1e-6;
-                // lss.executeMethods(tol);
-                // } else if (t == 3) {
-                // tol = 1e-8;
-                // lss.executeMethods(tol);
-                // } else {
-                // tol = 1e-10;
-                // lss.executeMethods(tol);
-                // }
-                // }
+                lss = new Gradiente("lslibrary/src/main/java/com/Matrici/vem2.mtx");
+                System.out.println(
+                                "____________________________________________________________________________________________________");
+                System.out.println();
+                System.out.println("GRADIENTE eseguito su vem2.mtx");
+                System.out.println();
+                for (int t = 1; t < 5; t++) {
+                        if (t == 1) {
+                                tol = 1e-4;
+                                lss.executeMethods(tol);
+                        } else if (t == 2) {
+                                tol = 1e-6;
+                                lss.executeMethods(tol);
+                        } else if (t == 3) {
+                                tol = 1e-8;
+                                lss.executeMethods(tol);
+                        } else {
+                                tol = 1e-10;
+                                lss.executeMethods(tol);
+                        }
+                }
 
                 // GRADIENTE CONIUGATO
 
-                LSSolver lss = new Gradienteconiugato("lslibrary/src/main/java/com/Matrici/spa1.mtx");
+                lss = new Gradienteconiugato("lslibrary/src/main/java/com/Matrici/spa1.mtx");
                 System.out.println(
                                 "____________________________________________________________________________________________________");
                 System.out.println();
